@@ -15,9 +15,6 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion(int sala, string clave)
     {
-        if(sala != Escape.GetEstadoJuego()){
-            return View("Habitacion"+Escape.GetEstadoJuego());
-        }
         if(!Escape.ResolverSala(sala, clave)){
             ViewBag.MensajeError = "Respuesta incorrecta!!!";
         }
